@@ -2,8 +2,8 @@ from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
+    database_url: str = Field(default=..., alias="DATABASE_URL")
     gemini_api_key: str = Field(default=..., alias="GEMINI_API_KEY")
-    hf_token: str = Field(default=..., alias="HF_TOKEN")
 
     model_config = SettingsConfigDict(
         env_file=(".env", "../.env"),
