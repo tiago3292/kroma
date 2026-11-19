@@ -12,5 +12,5 @@ class UserResponse(BaseModel):
     model_config = {"from_attributes": True}
 
 class UserUpdate(BaseModel):
-    username: str | None = None
-    email: EmailStr | None = None
+    username: str | None = UserCreate.username
+    email: EmailStr | None = UserCreate.email
